@@ -30,3 +30,15 @@ telnet <server> <port>
 ```
 if yes, lets continue (if you do not have telnet installed, wait until you start up your vagrant box to test this).
 
+```bash
+# get the cmssw box:
+wget https://cernbox.cern.ch/index.php/s/5SNj4MhjL8hJlmm/download -O cmssw.box
+vagrant box add cmssw.box --name l1t/cmssw
+rm -f cmssw.box
+vagrant up
+vagrant ssh
+cd /vagrant
+# first time only
+source bin/setup.sh
+source bin/env.sh
+```

@@ -91,6 +91,7 @@ ENV/
 # Eclipse project files
 .project
 .pydevproject
+.vagrant
 
 external
 workspace
