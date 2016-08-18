@@ -11,13 +11,13 @@ warnings.filterwarnings("ignore")
 current_path = os.path.split(__file__)[0]
 # configure which commands to use. All modules in HEP_PROJECT_COMMANDS
 # that contain a `Command` class will be considered a valid command
-os.environ['HEP_PROJECT_COMMANDS'] = os.path.join(current_path, '..', 'python', 'commands')
+os.environ['HEP_PROJECT_COMMANDS'] = os.path.join(current_path, '..', 'l1t_cli', 'commands')
 # the parent python module for all commands, e.g. myPackage.commands
-os.environ['HEP_PROJECT_BASE_MODULE'] = 'commands'
+os.environ['HEP_PROJECT_BASE_MODULE'] = 'l1t_cli.commands'
 # use basic commands provided by HEPSHELL
 os.environ['USE_HEPSHELL_COMMANDS'] = '1'
 # optional
-path_to_projects_python = os.path.join(current_path, '..', 'python')
+path_to_projects_python = os.path.join(current_path, '..')
 sys.path.append(path_to_projects_python)
 
 import hepshell
