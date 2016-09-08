@@ -101,3 +101,5 @@ if [ ! -d "${HEP_PROJECT_ROOT}/external/miniconda" ] ; then
 else
 	PATH=${HEP_PROJECT_ROOT}/external/miniconda/bin:$PATH; export PATH
 fi
+
+l1t setup
