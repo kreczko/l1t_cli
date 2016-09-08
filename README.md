@@ -7,7 +7,6 @@ For available commands, execute `l1t help`.
 ```bash
 git clone https://github.com/kreczko/l1t_cli.git
 cd l1t_cli
-source bin/setup.sh
 source bin/env.sh
 ```
 
@@ -38,7 +37,5 @@ rm -f cmssw.box
 vagrant up
 vagrant ssh
 cd /vagrant
-# first time only
-source bin/setup.sh
 source bin/env.sh
 ```
