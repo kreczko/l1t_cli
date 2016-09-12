@@ -16,6 +16,7 @@ from .. import Command as C
 
 LOG = logging.getLogger(__name__)
 
+URL_PREFIX = 'https://twiki.cern.ch/twiki/bin/view/'
 TWIKIS = {
     'L1T offline DEV': {
         'url': 'https://twiki.cern.ch/twiki/bin/view/CMSPublic/SWGuideL1TOfflineDev',
@@ -27,14 +28,14 @@ TWIKIS = {
     },
     'L1T phase 2': {
         'url': 'https://twiki.cern.ch/twiki/bin/view/CMS/L1TriggerPhase2',
-        'description': 'Some CaloL2 analysis workflows are detailed here',
+        'description': 'In preparation ! ',
     },
     'L1T phase 2 interface specs': {
         'url': 'https://twiki.cern.ch/twiki/bin/view/CMS/L1TriggerPhase2InterfaceSpecifications',
         'description': 'Working definitions of Trigger Primitive inputs',
     },
     'CSC trigger emulator timing': {
-        'url': 'https://twiki.cern.ch/twiki/bin/viewauth/CMS/CSCDigitizationTiming',
+        'url': 'https://twiki.cern.ch/twiki/bin/view/CMS/CSCDigitizationTiming',
         'description': 'Simulation of signal times for CSC',
     },
     'L1 Trigger Emulator Stage 2 Upgrade Instructions': {
@@ -103,6 +104,7 @@ class Command(C):
         self.__text += '\n'
 
         for name, twiki in sorted(twikis.items()):
+#             url = twiki['url'].replace(URL_PREFIX, '')
             url = twiki['url']
             desc = twiki['description']
             if not self.__variables['check'] or does_url_exist(url):
