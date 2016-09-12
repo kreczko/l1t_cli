@@ -36,6 +36,10 @@ TWIKIS = {
     'CSC trigger emulator timing': {
         'url': 'https://twiki.cern.ch/twiki/bin/viewauth/CMS/CSCDigitizationTiming',
         'description': 'Simulation of signal times for CSC',
+    },
+    'L1 Trigger Emulator Stage 2 Upgrade Instructions': {
+        'url': 'https://twiki.cern.ch/twiki/bin/view/CMSPublic/SWGuideL1TStage2Instructions',
+        'description': 'L1 Trigger Emulator Stage 2 Upgrade Instructions',
     }
 }
 
@@ -68,7 +72,7 @@ def get_text_lenghts(twikis):
 
 
 class Command(C):
-    
+
     DEFAULTS = {
         'check': False
     }
@@ -98,7 +102,7 @@ class Command(C):
         self.__text += '-' * (max_len_n + max_len_u + max_len_d)
         self.__text += '\n'
 
-        for name, twiki in twikis.items():
+        for name, twiki in sorted(twikis.items()):
             url = twiki['url']
             desc = twiki['description']
             if not self.__variables['check'] or does_url_exist(url):
