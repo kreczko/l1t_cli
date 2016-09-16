@@ -24,7 +24,7 @@ class Command(C):
 
     def run(self, args, variables):
         self.__prepare(args, variables)
-        for path in [WORKSPACE, CACHE, LOGDIR, TMPDIR]:
+        for path in [WORKSPACE, CACHE, LOGDIR, TMPDIR, RESULTDIR]:
             if not os.path.exists(path):
                 LOG.debug("Creating path {0}".format(path))
                 os.mkdir(path)
