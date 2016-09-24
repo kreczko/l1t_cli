@@ -16,31 +16,21 @@ To use it simply execute `l1t <enter>`.
 
 
 # Setup on OS X/Ubuntu/Windows
-(TO BE REVISED)
-Prerequisites:
+## Prerequisites:
  - installed virtualbox: https://www.virtualbox.org/
  - installed vagrant: https://www.vagrantup.com
- - connection to a squid proxy server
-The last item is required to make CVMFS work. Usually this means that you
-need to be connected to a network where the local site's squid proxy servers
-are reachable from.
-To check for the servers, login onto a node that has CVMFS installed and execute
-```bash
-grep -r CVMFS_HTTP_PROXY /etc/cvmfs/
-# the output should be similar to this:
-# CVMFS_HTTP_PROXY='http://<server 1>:<port>;http://<server 2>:<port>; etc
-# check on your machine if you can access it via telnet
-telnet <server> <port>
-```
-if yes, lets continue (if you do not have telnet installed, wait until you start up your vagrant box to test this).
+
+## run
 
 ```bash
-# get the cmssw box:
-wget https://cernbox.cern.ch/index.php/s/5SNj4MhjL8hJlmm/download -O cmssw.box
-vagrant box add cmssw.box --name l1t/cmssw
-rm -f cmssw.box
+# get the CERNVM box
 vagrant up
 vagrant ssh
+# if you need AFS, do this first time only:
+sudo mkdir /afs
+sudo /sbin/chkconfig afs on
+sudo /sbin/service afs start
+# now time to do some work
 cd /vagrant
 source bin/env.sh
 ```

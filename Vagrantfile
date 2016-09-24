@@ -12,7 +12,7 @@ Vagrant.configure(2) do |config|
 
   # Every Vagrant development environment requires a box. You can search for
   # boxes at https://atlas.hashicorp.com/search.
-  config.vm.box = "l1t/cmssw"
+  config.vm.box = "cernvm/3-prod"
 
   # Disable automatic box update checking. If you disable this, then
   # boxes will only be checked for updates when the user runs
@@ -41,7 +41,7 @@ Vagrant.configure(2) do |config|
   config.vm.synced_folder ".", "/vagrant"
   # maps your grid cert directory
   config.vm.synced_folder "~/.globus", "/home/vagrant/.globus"
-  config.vm.synced_folder "/afs/cern.ch/work", "/afs/cern.ch/work"
+  #config.vm.synced_folder "/afs/cern.ch/work", "/afs/cern.ch/work"
   # Provider-specific configuration so you can fine-tune various
   # backing providers for Vagrant. These expose provider-specific options.
   # Example for VirtualBox:
