@@ -96,7 +96,8 @@ if [ ! -d "${HEP_PROJECT_ROOT}/external/miniconda" ] ; then
 	conda update conda -y
 	conda update pip -y
 	# python modules
-	pip install -U python-cjson pycurl
+	pip install -U python-cjson
+	PYCURL_SSL_LIBRARY=nss pip install --compile pycurl --global-option='--with-nss'
 	pip install -U git+https://github.com/kreczko/hepshell.git
 else
 	PATH=${HEP_PROJECT_ROOT}/external/miniconda/bin:$PATH; export PATH
