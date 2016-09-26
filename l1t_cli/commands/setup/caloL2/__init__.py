@@ -37,7 +37,7 @@ class Command(C):
 
         commands = [
             'git cms-init',
-            'git remote add cms-l1t-offline git@github.com:cms-l1t-offline/cmssw.git',
+            'git remote add cms-l1t-offline https://github.com/cms-l1t-offline/cmssw.git',
             'git fetch cms-l1t-offline',
             'git cms-merge-topic --unsafe cms-l1t-offline:{0}'.format(RECIPE['l1t_version']),
             'scram b jobs=2',
