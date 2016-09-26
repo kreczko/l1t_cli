@@ -41,7 +41,11 @@ TWIKIS = {
     'L1 Trigger Emulator Stage 2 Upgrade Instructions': {
         'url': 'https://twiki.cern.ch/twiki/bin/view/CMSPublic/SWGuideL1TStage2Instructions',
         'description': 'L1 Trigger Emulator Stage 2 Upgrade Instructions',
-    }
+    },
+    'Offline DQM': {
+        'url': 'https://twiki.cern.ch/twiki/bin/view/CMS/DQMOffline',
+        'description': 'Twiki meant to give you a basic understanding of Offline DQM',
+    },
 }
 
 
@@ -104,7 +108,7 @@ class Command(C):
         self.__text += '\n'
 
         for name, twiki in sorted(twikis.items()):
-#             url = twiki['url'].replace(URL_PREFIX, '')
+            #             url = twiki['url'].replace(URL_PREFIX, '')
             url = twiki['url']
             desc = twiki['description']
             if not self.__variables['check'] or does_url_exist(url):
