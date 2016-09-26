@@ -34,3 +34,15 @@ sudo /sbin/service afs start
 cd /vagrant
 source bin/env.sh
 ```
+For some of the recipes you will be required to interact with github.
+For the recipes to work correctly you will need to define
+
+```bash
+# Please set up your full name via:
+git config --global user.name '<your name> <your last name>'
+# Please set up your email via:
+git config --global user.email '<your e-mail>'
+# Please set up your GitHub user name via:
+git config --global user.github <your github username>
+
+```
