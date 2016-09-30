@@ -12,6 +12,8 @@ Vagrant.configure(2) do |config|
 
   # Every Vagrant development environment requires a box. You can search for
   # boxes at https://atlas.hashicorp.com/search.
+  # CERNVM (https://github.com/cernvm/cernvm-micro/blob/devel/vagrant_build.sh)
+  # is a good start since it provides AFS and CVMFS.
   config.vm.box = "cernvm/3-prod"
 
   # Disable automatic box update checking. If you disable this, then
@@ -32,13 +34,17 @@ Vagrant.configure(2) do |config|
   # Bridged networks make the machine appear as another physical device on
   # your network.
   # config.vm.network "public_network"
+  # forward DQM GUI port
+  config.vm.network :forwarded_port, guest: 8060, host: 8060
+
+  config.ssh.forward_x11 = true
 
   # Share an additional folder to the guest VM. The first argument is
   # the path on the host to the actual folder. The second argument is
   # the path on the guest to mount the folder. And the optional third
   # argument is a set of non-required options.
   # config.vm.synced_folder "../data", "/vagrant_data"
-  config.vm.synced_folder ".", "/vagrant"
+  config.vm.synced_folder ".", "/vagrant", nfs: false
   # maps your grid cert directory
   config.vm.synced_folder "~/.globus", "/home/vagrant/.globus"
   #config.vm.synced_folder "/afs/cern.ch/work", "/afs/cern.ch/work"
