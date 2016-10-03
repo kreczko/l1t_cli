@@ -11,3 +11,7 @@ fi
 source current/apps/dqmgui/128/etc/profile.d/env.sh
 $PWD/current/config/dqmgui/manage -f dev start "I did read documentation"
 # DQM GUI now available at http://localhost:8060/dqm/dev
+
+sudo mkdir /afs
+sudo /sbin/chkconfig afs on
+sudo /sbin/service afs start

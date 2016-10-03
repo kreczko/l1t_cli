@@ -10,7 +10,7 @@ import os
 import string
 from hepshell.interpreter import time_function
 from l1t_cli.commands import Command as C
-from .. import WORKSPACE
+from l1t_cli.setup import WORKSPACE
 from l1t_cli.setup import INTEGRATION_TAG
 
 LOG = logging.getLogger(__name__)
