@@ -38,7 +38,7 @@ class Command(C):
         'version': CMSSW_VERSION,
         'init-git': True,
         'parent_folder': WORKSPACE,
-        'alias': '',
+        'alias': CMSSW_VERSION,
         'scram_arch': SCRAM_ARCH,
     }
 
@@ -64,7 +64,7 @@ class Command(C):
             'cd {parent_folder}',
             'export SCRAM_ARCH={scram_arch}',
             'source /cvmfs/cms.cern.ch/cmsset_default.sh',
-            '/cvmfs/cms.cern.ch/common/scram project CMSSW {version} -n {alias}',
+            '/cvmfs/cms.cern.ch/common/scram project -n {alias} CMSSW {version}',
         ]
         if self.__variables['init-git']:
             commands.extend([
