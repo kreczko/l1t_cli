@@ -79,7 +79,7 @@ if [ "$vomsInfo" = "" ]; then
   if [ -f /cvmfs/grid.cern.ch/etc/profile.d/setup-cvmfs-ui.sh ]; then
 	source /cvmfs/grid.cern.ch/etc/profile.d/setup-cvmfs-ui.sh
   else
-    echo "Cannot find voms-proxy-info nor etup-cvmfs-ui.sh"
+    echo "Cannot find voms-proxy-info nor setup-cvmfs-ui.sh"
   fi
 fi
 
@@ -95,12 +95,15 @@ if [ ! -d "${HEP_PROJECT_ROOT}/external/miniconda" ] ; then
 	rm -f miniconda.sh
 	conda update conda -y
 	conda update pip -y
+	conda create --name l1t python=2.7 -y
+	source activate l1t
 	# python modules
 	pip install -U python-cjson
 	PYCURL_SSL_LIBRARY=nss pip install --compile pycurl --global-option='--with-nss'
 	pip install -U git+https://github.com/kreczko/hepshell.git
 else
 	PATH=${HEP_PROJECT_ROOT}/external/miniconda/bin:$PATH; export PATH
+	source activate l1t
 fi
 
 l1t setup
