@@ -2,8 +2,8 @@ language: python
 python:
   - "2.7"
 
-install:
-  - source bin/env.sh
-
 script:
-  - nosetests -v tests
+  - source bin/env.sh
+  - python -c 'import hepshell'
+  - python -c 'import l1t_cli'
+  - nosetests  -v -a '!slow' -s tests
