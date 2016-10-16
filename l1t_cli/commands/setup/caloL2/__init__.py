@@ -6,9 +6,10 @@
 import logging
 import os
 import string
+import hepshell
+
 from hepshell.interpreter import time_function
-from .. import Command as C
-from .. import WORKSPACE
+from l1t_cli.setup import WORKSPACE
 
 LOG = logging.getLogger(__name__)
 
@@ -19,7 +20,7 @@ RECIPE = {
 }
 
 
-class Command(C):
+class Command(hepshell.Command):
 
     def __init__(self, path=__file__, doc=__doc__):
         super(Command, self).__init__(path, doc)

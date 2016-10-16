@@ -5,19 +5,18 @@
 """
 import logging
 import os
-from hepshell import HEP_PROJECT_ROOT
+import hepshell
 
-from .. import Command as C
 
 LOG = logging.getLogger(__name__)
-WORKSPACE = os.path.join(HEP_PROJECT_ROOT, 'workspace')
+WORKSPACE = os.path.join(hepshell.HEP_PROJECT_ROOT, 'workspace')
 CACHE = os.path.join(WORKSPACE, 'cache')
 LOGDIR = os.path.join(WORKSPACE, 'log')
 TMPDIR = os.path.join(WORKSPACE, 'tmp')
 RESULTDIR = os.path.join(WORKSPACE, 'results')
 
 
-class Command(C):
+class Command(hepshell.Command):
 
     def __init__(self, path=__file__, doc=__doc__):
         super(Command, self).__init__(path, doc)
