@@ -98,7 +98,7 @@ if [ ! -d "${HEP_PROJECT_ROOT}/external/miniconda" ] ; then
 	conda create --name l1t python=2.7 -y
 	source activate l1t
 	# python modules
-	pip install -U python-cjson
+	pip install -U python-cjson nose
 	PYCURL_SSL_LIBRARY=nss pip install --compile pycurl --global-option='--with-nss'
 	pip install -U git+https://github.com/kreczko/hepshell.git
 else
