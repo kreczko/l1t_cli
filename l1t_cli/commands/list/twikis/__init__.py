@@ -46,6 +46,10 @@ TWIKIS = {
         'url': 'https://twiki.cern.ch/twiki/bin/view/CMS/DQMOffline',
         'description': 'Twiki meant to give you a basic understanding of Offline DQM',
     },
+    'L1T DQM DEV': {
+        'url': 'https://twiki.cern.ch/twiki/bin/view/Sandbox/L1TDQMModuleDev',
+        'description': 'L1T DQM Module Development Guide',
+    }
 }
 
 
