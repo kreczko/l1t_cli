@@ -66,4 +66,10 @@ class Command(hepshell.Command):
             if not success:  # stop at first error
                 return False
 
+        # now activate the working area:
+        from l1t_cli.commands.update.active_cmssw import Command as UpdateCMSSW
+        c = UpdateCMSSW()
+        new_cmssw = os.path.join(WORKSPACE, RECIPE['alias'])
+        c.run([new_cmssw], {})
+
         return True
