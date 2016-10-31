@@ -15,3 +15,12 @@ def update_symlink(symlink, destination):
         os.remove(symlink)
 
     os.symlink(destination, symlink)
+
+
+def is_vagrant_host():
+    import getpass
+    import socket
+    user = getpass.getuser()
+    hostname = socket.gethostname()
+
+    return user == 'vagrant' and hostname == 'localhost'
