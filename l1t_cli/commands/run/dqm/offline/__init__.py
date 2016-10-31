@@ -25,8 +25,8 @@ class Command(hepshell.Command):
             WORKSPACE, RECIPE['alias'], 'src', 'DQMOffline/L1Trigger/test/'
         )
         self.__step1 = os.path.join(
-#             base_path, 'runDQMOffline_step1_L1TStage2CaloLayer2_cfg.py'
-            base_path, 'test_L1T_offline.py'
+            base_path, 'runDQMOffline_step1_L1TStage2CaloLayer2_cfg.py'
+#             base_path, 'test_L1T_offline.py'
         )
         self.__step2 = os.path.join(
             base_path, 'runDQMOffline_step2_L1TStage2CaloLayer2_cfg.py'
