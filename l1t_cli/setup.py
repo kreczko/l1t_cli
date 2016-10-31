@@ -7,6 +7,7 @@ CACHE = os.path.join(WORKSPACE, 'cache')
 LOGDIR = os.path.join(WORKSPACE, 'log')
 TMPDIR = os.path.join(WORKSPACE, 'tmp')
 RESULTDIR = os.path.join(WORKSPACE, 'results')
+ACTIVE_CMSSW = os.path.join(WORKSPACE, 'current')
 
 
 def read_setup():
