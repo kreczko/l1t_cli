@@ -1,9 +1,9 @@
 """
-    run dqm offline:
+    dqm offline run:
         Runs the L1 Trigger offline DQM sequences (just L1 Trigger offline!)
         
     Usage:
-        run dqm offline
+        dqm offline run
 
 """
 import logging
@@ -13,7 +13,7 @@ from hepshell.interpreter import time_function
 
 LOG = logging.getLogger(__name__)
 
-from l1t_cli.commands.setup.dqm.offline import RECIPE
+from l1t_cli.commands.dqm.offline.setup import RECIPE
 from l1t_cli.setup import WORKSPACE
 
 
@@ -33,7 +33,7 @@ class Command(hepshell.Command):
         )
         self.__cmssw_path = os.path.join(WORKSPACE, RECIPE['alias'])
 
-    @time_function('run dqm offline', LOG)
+    @time_function('dqm offline run', LOG)
     def run(self, args, variables):
         self.__prepare(args, variables)
 

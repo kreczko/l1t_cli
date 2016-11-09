@@ -13,7 +13,7 @@ from hepshell.interpreter import time_function
 
 LOG = logging.getLogger(__name__)
 
-from l1t_cli.commands.setup.dqm.gui import DQM_GUI_PATH
+from l1t_cli.commands.dqm.gui.setup import DQM_GUI_PATH
 
 
 class Command(hepshell.Command):

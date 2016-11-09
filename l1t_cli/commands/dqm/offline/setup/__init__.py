@@ -1,9 +1,9 @@
 """
-    setup dqm offline:
+    dqm offline setup:
         Sets up CMSSW and the latest code to preduce OfflineDQM plots
 
         Usage:
-            setup offlineDQM
+            dqm offline setup
 """
 import logging
 import os
@@ -28,7 +28,7 @@ class Command(hepshell.Command):
     def __init__(self, path=__file__, doc=__doc__):
         super(Command, self).__init__(path, doc)
 
-    @time_function('setup dqm offline', LOG)
+    @time_function('dqm offline setup', LOG)
     def run(self, args, variables):
         self.__prepare(args, variables)
         self.__version = RECIPE['cmssw_version']

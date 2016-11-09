@@ -1,10 +1,10 @@
 """
-    setup dqm gui:
+    dqm gui setup:
         Sets up the DQM GUI. It will be available at port localhost:8060/dqm/dev
         From https://twiki.cern.ch/twiki/bin/view/CMS/DQMGuiForUsers
 
         Usage:
-            setup dqm gui
+            dqm gui setup
 """
 import logging
 import os
@@ -38,7 +38,7 @@ class Command(hepshell.Command):
     def __init__(self, path=__file__, doc=__doc__):
         super(Command, self).__init__(path, doc)
 
-    @time_function('setup dqm gui', LOG)
+    @time_function('dqm gui setup', LOG)
     def run(self, args, variables):
         self.__prepare(args, variables)
         if not self.__can_run():
