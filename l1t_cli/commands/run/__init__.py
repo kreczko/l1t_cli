@@ -6,10 +6,9 @@
 import logging
 import os
 from hepshell import HEP_PROJECT_ROOT
-
 import hepshell
-from l1t_cli.setup import CMSSW_SRC
 
+from l1t_cli.setup import CMSSW_SRC
 
 LOG = logging.getLogger(__name__)
 

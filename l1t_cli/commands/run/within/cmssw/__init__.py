@@ -16,8 +16,6 @@ import hepshell
 
 from l1t_cli.setup import CMSSW_BASE
 
-from l1t_cli.setup import CMSSW_BASE
-
 LOG = logging.getLogger(__name__)
 
 
