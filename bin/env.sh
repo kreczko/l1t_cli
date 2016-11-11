@@ -88,6 +88,8 @@ if [ ! -d "${HEP_PROJECT_ROOT}/external" ] ; then
 	mkdir ${HEP_PROJECT_ROOT}/external
 fi
 
+PLATFORM=`python -mplatform`
+
 if [ ! -d "${HEP_PROJECT_ROOT}/external/miniconda" ] ; then
 	wget -nv http://repo.continuum.io/miniconda/Miniconda-latest-Linux-x86_64.sh -O miniconda.sh
 	bash miniconda.sh -b -p ${HEP_PROJECT_ROOT}/external/miniconda
@@ -99,7 +101,12 @@ if [ ! -d "${HEP_PROJECT_ROOT}/external/miniconda" ] ; then
 	source activate l1t
 	# python modules
 	pip install -U python-cjson nose
-	PYCURL_SSL_LIBRARY=nss pip install --compile pycurl --global-option='--with-nss'
+	if [[ $PLATFORM == *"redhat"* ]]; then
+		PYCURL_SSL_LIBRARY=nss pip install --compile pycurl --global-option='--with-nss'
+	fi
+	if [[ $PLATFORM == *"debian"* ]]; then
+		PYCURL_SSL_LIBRARY=openssl pip install --compile pycurl --global-option='--with-openssl'
+	fi
 	pip install -U git+https://github.com/kreczko/hepshell.git
 	
 	conda clean -t -y
