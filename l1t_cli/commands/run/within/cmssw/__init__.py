@@ -25,6 +25,10 @@ class Command(hepshell.Command):
         'cmssw_path': CMSSW_BASE
     }
 
+    DEFAULTS = {
+        'cmssw_path': CMSSW_BASE
+    }
+
     def __init__(self, path=__file__, doc=__doc__):
         super(Command, self).__init__(path, doc)
 

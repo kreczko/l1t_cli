@@ -26,7 +26,6 @@
 import logging
 import os
 import hepshell
-
 from hepshell.interpreter import time_function
 
 LOG = logging.getLogger(__name__)

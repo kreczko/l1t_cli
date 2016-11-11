@@ -8,8 +8,7 @@
 import logging
 import os
 from hepshell import HEP_PROJECT_ROOT
-
-from .. import Command as C
+import hepshell
 
 from l1t_cli.setup import WORKSPACE, CMSSW_BASE, CMSSW_SRC
 
@@ -19,7 +18,7 @@ MACRO_GIT_URL = 'https://github.com/kreczko/l1t-macros.git'
 MACRO_DST = os.path.join(CMSSW_SRC, 'l1t_macros')
 
 
-class Command(C):
+class Command(hepshell.Command):
 
     def __init__(self, path=__file__, doc=__doc__):
         super(Command, self).__init__(path, doc)

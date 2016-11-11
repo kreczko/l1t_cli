@@ -6,11 +6,10 @@
         get latest integration branch
 """
 import logging
-#import pycurl
+import pycurl
 import json
 from StringIO import StringIO
 import re
-
 import hepshell
 
 LOG = logging.getLogger(__name__)
