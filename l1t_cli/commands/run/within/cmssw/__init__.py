@@ -12,14 +12,14 @@
 """
 import logging
 import os
+import hepshell
 
-from l1t_cli.commands import Command as C
 from l1t_cli.setup import CMSSW_BASE
 
 LOG = logging.getLogger(__name__)
 
 
-class Command(C):
+class Command(hepshell.Command):
 
     DEFAULTS = {
         'cmssw_path': CMSSW_BASE

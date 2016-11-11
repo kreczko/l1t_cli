@@ -6,19 +6,19 @@
         get latest integration branch
 """
 import logging
-import pycurl
+#import pycurl
 import json
 from StringIO import StringIO
 import re
 
-from l1t_cli.commands.get import Command as C
+import hepshell
 
 LOG = logging.getLogger(__name__)
 URL = 'https://api.github.com/repos/cms-l1t-offline/cmssw/tags?per_page=10000'
 REPO = 'https://github.com/cms-l1t-offline/cmssw'
 
 
-class Command(C):
+class Command(hepshell.Command):
 
     def __init__(self, path=__file__, doc=__doc__):
         doc = doc.format(REPO)

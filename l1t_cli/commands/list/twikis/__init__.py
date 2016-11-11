@@ -12,7 +12,7 @@
 """
 import logging
 import urllib
-from .. import Command as C
+import hepshell
 
 LOG = logging.getLogger(__name__)
 
@@ -76,7 +76,7 @@ def get_text_lenghts(twikis):
     return max(len_names), max(len_urls), max(len_descriptions)
 
 
-class Command(C):
+class Command(hepshell.Command):
 
     DEFAULTS = {
         'check': False

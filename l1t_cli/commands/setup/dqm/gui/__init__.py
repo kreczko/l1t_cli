@@ -8,15 +8,16 @@
 import logging
 import os
 import string
+import hepshell
+
 from hepshell.interpreter import time_function
-from l1t_cli.commands import Command as C
 from l1t_cli.setup import WORKSPACE
 from l1t_cli.setup import INTEGRATION_TAG
 
 LOG = logging.getLogger(__name__)
 
 
-class Command(C):
+class Command(hepshell.Command):
 
     def __init__(self, path=__file__, doc=__doc__):
         super(Command, self).__init__(path, doc)

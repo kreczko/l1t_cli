@@ -7,13 +7,14 @@ import logging
 import os
 from hepshell import HEP_PROJECT_ROOT
 
+import hepshell
 from l1t_cli.setup import CMSSW_SRC
-from .. import Command as C
+
 
 LOG = logging.getLogger(__name__)
 
 
-class Command(C):
+class Command(hepshell.Command):
 
     def __init__(self, path=__file__, doc=__doc__):
         super(Command, self).__init__(path, doc)

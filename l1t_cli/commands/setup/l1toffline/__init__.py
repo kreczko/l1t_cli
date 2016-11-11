@@ -6,15 +6,13 @@
 """
 import logging
 import os
-from hepshell import HEP_PROJECT_ROOT
+import hepshell
 from l1t_cli.setup import INTEGRATION_TAG
-
-from .. import Command as C
 
 LOG = logging.getLogger(__name__)
 
 
-class Command(C):
+class Command(hepshell.Command):
 
     DEFAULTS = {
 

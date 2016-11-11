@@ -25,7 +25,8 @@
 """
 import logging
 import os
-from .. import Command as C
+import hepshell
+
 from hepshell.interpreter import time_function
 
 LOG = logging.getLogger(__name__)
@@ -33,7 +34,7 @@ LOG = logging.getLogger(__name__)
 from l1t_cli.setup import CMSSW_VERSION, WORKSPACE, SCRAM_ARCH
 
 
-class Command(C):
+class Command(hepshell.Command):
     DEFAULTS = {
         'version': CMSSW_VERSION,
         'init-git': True,
