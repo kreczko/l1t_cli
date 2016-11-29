@@ -75,7 +75,7 @@ class Command(hepshell.Command):
             self.__text = 'Something went wrong:\n'
             self.__text += err
 
-        self.__text = 'You can now run "l1t run dqm gui"'
+        self.__text = 'You can now run "l1t dqm gui start"'
 
         return True
 
