@@ -54,6 +54,7 @@ class Command(hepshell.Command):
             'git cms-addpkg DQMServices/Examples',
             'git cms-addpkg DQMServices/Components',
             'git cms-addpkg DQMOffline/L1Trigger',
+            'git cms-merge-topic kreczko:offlineDQM-l1tEGamma'
             'scram b jobs=2',
         ]
         from l1t_cli.commands.run.within.cmssw import Command as RunCMSSW
