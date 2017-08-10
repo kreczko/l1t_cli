@@ -1,0 +1,3 @@
+[submodule "external/deployment"]
+	path = external/deployment
+	url = git://github.com/dmwm/deployment.git
