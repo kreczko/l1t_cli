@@ -1,0 +1,11 @@
+*.root
+.git
+.vagrant
+bin
+data
+DEV
+doc
+external
+l1t_cli
+tests
+workspace

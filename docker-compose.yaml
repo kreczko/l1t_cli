@@ -1,0 +1,47 @@
+
+version: '3'
+
+services:
+  offline-dqm:
+    build:
+      context: .
+      dockerfile: docker/offline-dqm/Dockerfile
+      args:
+        USERID: 1000
+    image: kreczko/offline-dqm
+    links:
+      - dqm-gui
+    volumes:
+      - ~/.gitconfig:/home/cmsuser/.gitconfig
+      - ~/.globus/:/home/cmsuser/.globus
+      - ~/.ssh/:/home/cmsuser/.ssh
+      - /tmp/cvmfs-dqm:/var/lib/cvmfs/shared
+      - ./workspace:/project
+      - ./data:/data
+      - dqmgui-volume:/data/srv:ro
+    environment:
+      CMSSW_VERSION: "CMSSW_9_3_0_pre3"
+      SCRAM_ARCH: "slc6_amd64_gcc700"
+      DISPLAY: ${DISPLAY}
+    privileged: true
+    tty: true
+
+  dqm-gui:
+    build:
+      context: .
+      dockerfile: docker/dqm-gui/Dockerfile
+    image: kreczko/dqm-gui
+    ports:
+      - 8060:8060
+    volumes:
+      - ./external/deployment:/code
+      - dqmgui-volume:/data/srv
+    environment:
+      - DQM_TAG=HG1610a
+      - INSTALL_DIR=/data/srv
+    tty: true
+    domainname: foo.bar
+    hostname: dqm-gui
+
+volumes:
+  dqmgui-volume:
