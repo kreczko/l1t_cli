@@ -1,5 +1,5 @@
 {
-	"cmssw_version" : "CMSSW_8_0_20",
-	"scram_arch": "slc6_amd64_gcc530",
-	"integration_tag": "l1t-integration-v86.4"
+	"cmssw_version" : "CMSSW_9_3_0_pre2",
+	"scram_arch": "slc6_amd64_gcc700",
+	"integration_tag": "l1t-integration-CMSSW_9_2_5_patch2"
 }
